@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 import nu.pattern.OpenCV;
 
@@ -20,6 +21,10 @@ public class TesteOpenCV {
 		MatUtils matUtils = new MatUtils();
 		BufferedImage img = matUtils.convertMatToImage(imagemColorida);
 		matUtils.mostraImagem(img);
+		
+		Mat imagemCinza = new Mat();
+		Imgproc.cvtColor(imagemColorida, imagemCinza, Imgproc.COLOR_BGR2GRAY);
+		matUtils.mostraImagem(matUtils.convertMatToImage(imagemCinza));
 	}
 
 }
