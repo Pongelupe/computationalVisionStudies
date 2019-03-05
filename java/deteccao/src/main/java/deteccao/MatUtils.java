@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import org.opencv.core.Mat;
 
 public class MatUtils {
-	
+
 	public BufferedImage convertMatToImage(Mat mat) {
 		int type = BufferedImage.TYPE_BYTE_GRAY;
 		if (mat.channels() > 1) {
@@ -37,5 +37,9 @@ public class MatUtils {
 		frame.add(lbl);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	public void mostraImagem(Mat mat) {
+		mostraImagem(convertMatToImage(mat));
 	}
 }
