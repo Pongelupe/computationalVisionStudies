@@ -46,7 +46,7 @@ public class Webcam extends JFrame {
 		Mat video = new Mat();
 		VideoCapture capture = new VideoCapture(0);
 		if (capture.isOpened()) {
-			while (true) {
+			while (this.isActive()) {
 				capture.read(video);
 				if (!video.empty()) {
 					setSize(video.width() + 50, video.height() + 70);
